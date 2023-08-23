@@ -1,0 +1,45 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="container">
+  <h1>Clients</h1>
+
+  <%= link_to "Nuevo cliente", new_client_path, class: "btn btn-primary boton_newclient" %>
+
+  <div id="clients" display:none;>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+      
+          <th scope="col">Name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Movie</th>
+          <th scope="col" colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <%= render client %>
+        <% end %>
+      </tbody>
+    </table>
+
+  
+  </div>
+</div>
+
+  <table>
+      <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Película arrendada</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.name %></td>
+            <td><%= client.movies.last&.name %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>

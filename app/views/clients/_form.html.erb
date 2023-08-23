@@ -1,0 +1,28 @@
+<div class="form-container">
+  <%= form_with(model: client) do |form| %>
+    <% if client.errors.any? %>
+      <div class="error-message">
+        <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+        <ul>
+          <% client.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.label :name %>
+      <%= form.text_field :name %>
+    </div>
+
+    <div>
+      <%= form.label :age %>
+      <%= form.text_field :age %>
+    </div>
+
+    <div>
+      <%= form.submit "Guardar", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>

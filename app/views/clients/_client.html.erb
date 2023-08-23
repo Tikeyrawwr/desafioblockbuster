@@ -1,0 +1,10 @@
+<div id="<%= dom_id client %>" class="client-entry">
+  <tr>
+    <td><%= client.name %></td>
+    <td><%= client.age %></td>
+    <td><%= client.movies.last&.name %></td>
+    <td><%= link_to "Ver", client, class: "btn btn-primary" %></td>
+    <td><%= link_to "Editar", edit_client_path(client), class: "btn btn-secondary" %></td>
+    <td><%= button_to "Mata a este baboso", client, method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" } %></td>
+  </tr>
+</div>
